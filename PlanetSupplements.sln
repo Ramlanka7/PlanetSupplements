@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetSupplements.UI", "PlanetSupplements\PlanetSupplements.UI.csproj", "{D06489AB-EA09-41BB-8207-256139F5B9DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetSupplements.API", "PlanetSupplements.API\PlanetSupplements.API.csproj", "{4615A985-890C-4E94-BDC7-606D34CCAE4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D06489AB-EA09-41BB-8207-256139F5B9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06489AB-EA09-41BB-8207-256139F5B9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06489AB-EA09-41BB-8207-256139F5B9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06489AB-EA09-41BB-8207-256139F5B9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4615A985-890C-4E94-BDC7-606D34CCAE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4615A985-890C-4E94-BDC7-606D34CCAE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4615A985-890C-4E94-BDC7-606D34CCAE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4615A985-890C-4E94-BDC7-606D34CCAE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
