@@ -4,17 +4,17 @@
       <form>
         <div>
           <md-input-container class="maxWidth">
-            <input class="md-block" mdInput placeholder="Email" value="" required="">
+            <input class="md-block" mdInput placeholder="Email" >
           </md-input-container>
         </div>
       
         <div>
           <md-input-container class="maxWidth">
-            <input mdInput placeholder="Password" value="" type="password" required="">
+            <input mdInput placeholder="Password" type="password" >
           </md-input-container>
         </div>
         <div>
-          <md-checkbox>Remeber Me</md-checkbox>
+          <md-checkbox >Remember Me</md-checkbox>
         </div>
         <div class="topMargin">
           <button md-raised-button class="btn-block" color="primary">Sign In</button>
@@ -25,9 +25,7 @@
           </a>
         </div>
         <div class="topMargin">
-          <a href="#" class="forgot-password">
-            Register
-          </a>
+          <a [routerLink]="['/register']">Register</a>
         </div>
       </form>
     </div>

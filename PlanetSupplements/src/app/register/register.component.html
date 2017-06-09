@@ -1,22 +1,21 @@
 ﻿<div class="container">
   <form>
-
     <div class="row">
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Email" value="" required="">
+          <input class="md-block" mdInput placeholder="Email" minlength="5" maxlength="50" value="{{ email }}">
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Password" type="password" value="" required="">
+          <input class="md-block" mdInput placeholder="Password" type="password" minlength="5" maxlength="15" value="{{ password }}">
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input mdInput placeholder="Confirm Password" value="" type="password" required="">
+          <input mdInput placeholder="Confirm Password" type="password" minlength="5" maxlength="15" value="{{ confirmPassword }}">
         </md-input-container>
       </div>
     </div>
@@ -24,37 +23,37 @@
     <div class="row">
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="First Name" value="" required="">
+          <input class="md-block" mdInput placeholder="First Name" maxlength="25" value="{{ firstName }}">
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input mdInput placeholder="Last Name" value="" required="">
+          <input mdInput placeholder="Last Name" value="{{ lastName }}" maxlength="25">
         </md-input-container>
       </div>
-        <div class="col-md-4">
-          <md-input-container class="maxWidth">
-            <input mdInput placeholder="Phone Number" value="" required="">
-          </md-input-container>
-        </div>
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input mdInput placeholder="Phone Number" value="{{ phoneNumber }}" maxlength="12">
+        </md-input-container>
+      </div>
     </div>
 
     <div class="row">
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Address 1" value="" required="">
+          <input class="md-block" mdInput placeholder="Address 1" maxlength="35" value="{{ address1 }}">
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Address 2" value="" required="">
+          <input class="md-block" mdInput placeholder="Address 2" maxlength="35" value="{{ address2 }}">
         </md-input-container>
       </div>
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="City" value="" required="">
+          <input class="md-block" mdInput placeholder="City" maxlength="25" value="{{ city }}">
         </md-input-container>
       </div>
     </div>
@@ -70,15 +69,15 @@
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Zip Code" value="" required="">
+          <input class="md-block" mdInput placeholder="Zip Code" maxlength="5" value="{{ zipCode }}">
         </md-input-container>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-4">
-      <button md-raised-button color="primary">Register</button>
-        <button md-raised-button>Clear</button>
+        <button md-raised-button color="primary" (click)="registerUser()">Register</button>
+        <button md-raised-button (click)="clearForm()">Clear</button>
       </div>
     </div>
   </form>
