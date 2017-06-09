@@ -4,12 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule } from '@angular/material';
+import { MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
@@ -17,12 +19,13 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),
     BrowserModule,
-    MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, BrowserAnimationsModule
+    MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

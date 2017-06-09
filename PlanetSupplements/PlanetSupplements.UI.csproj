@@ -70,7 +70,10 @@
     <Content Include="src\app\app.component.less" />
     <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\login\login.component.html" />
+    <Content Include="src\app\register\register.component.html" />
     <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\assets\logo.png" />
+    <Content Include="src\assets\favicon.png" />
     <Content Include="src\styles.less" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
@@ -80,6 +83,7 @@
     <Content Include="package.json" />
     <Content Include="src\app\login\login.component.less" />
     <Content Include="src\app\home\home.component.less" />
+    <Content Include="src\app\register\register.component.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,6 +110,8 @@
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\app\register\register.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\register\register.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

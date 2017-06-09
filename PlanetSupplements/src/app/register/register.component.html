@@ -1,0 +1,85 @@
+﻿<div class="container">
+  <form>
+
+    <div class="row">
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input class="md-block" mdInput placeholder="Email" value="" required="">
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input class="md-block" mdInput placeholder="Password" type="password" value="" required="">
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input mdInput placeholder="Confirm Password" value="" type="password" required="">
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input class="md-block" mdInput placeholder="First Name" value="" required="">
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input mdInput placeholder="Last Name" value="" required="">
+        </md-input-container>
+      </div>
+        <div class="col-md-4">
+          <md-input-container class="maxWidth">
+            <input mdInput placeholder="Phone Number" value="" required="">
+          </md-input-container>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input class="md-block" mdInput placeholder="Address 1" value="" required="">
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input class="md-block" mdInput placeholder="Address 2" value="" required="">
+        </md-input-container>
+      </div>
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input class="md-block" mdInput placeholder="City" value="" required="">
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <md-select placeholder="State">
+          <md-option *ngFor="let state of states" [value]="state.value">
+            {{ state.viewValue }}
+          </md-option>
+        </md-select>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="maxWidth">
+          <input class="md-block" mdInput placeholder="Zip Code" value="" required="">
+        </md-input-container>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4">
+      <button md-raised-button color="primary">Register</button>
+        <button md-raised-button>Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
