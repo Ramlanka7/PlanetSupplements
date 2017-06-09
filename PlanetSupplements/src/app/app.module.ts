@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +21,8 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),
-    BrowserModule
+    BrowserModule,
+    MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
