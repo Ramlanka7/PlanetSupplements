@@ -1,4 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
+import { Register } from 'app/Model/Register'
 
 @Component({
   selector: 'app-register',
@@ -6,49 +7,35 @@
   styleUrls: ['./register.component.less']
 })
 export class RegisterComponent implements OnInit {
+  private register = new Register();
 
-  states = [
-    { value: 'AL', viewValue: 'Alabama' },
-    { value: 'TN', viewValue: 'Tennessee' },
-    { value: 'VA', viewValue: 'Virginia' }
-  ];
+  invalid = false;
 
-  email: string;
+  errors: Array<string> = [];
 
-  password: string;
-
-  confirmPassword: string;
-
-  firstName: string;
-
-  lastName: string;
-
-  phoneNumber: string;
-
-  address1: string;
-
-  address2: string;
-
-  city: string;
-
-  state: string;
-
-  zipCode: string;
-
-  constructor() { }
+  constructor() {
+    this.register.states = [
+      { value: 'AL', viewValue: 'Alabama' },
+      { value: 'TN', viewValue: 'Tennessee' },
+      { value: 'VA', viewValue: 'Virginia' }
+    ];
+  }
 
   ngOnInit() {
-  
   }
 
   registerUser() {
-    alert("Email required");
+    this.invalid = true;
+    this.errors.push("Email is required.");
   }
 
   clearForm() {
-    this.email = this.password = this.confirmPassword
-      = this.firstName = this.lastName = this.phoneNumber
-      = this.address1 = this.address2 = this.city
-      = this.zipCode = this.state = null;
+    this.register.email = this.register.password = this.register.confirmPassword
+      = this.register.firstName = this.register.lastName = this.register.phoneNumber
+      = this.register.address1 = this.register.address2 = this.register.city
+      = this.register.zipCode = this.register.state = null;
+
+    this.invalid = false;
+    this.errors = [];
   }
 }
