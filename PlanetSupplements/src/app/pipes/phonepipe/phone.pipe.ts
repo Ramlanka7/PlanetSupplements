@@ -12,6 +12,10 @@ export class PhonePipe implements PipeTransform {
     var viewVal = value.trim().replace(/^\+/, '');
     viewVal = viewVal.replace(/[^0-9]/g, '').slice(0, 10);
 
+    if (!viewVal) {
+      return "";
+    }
+
     var area, number;
     switch (viewVal.length) {
       case 1:
@@ -31,6 +35,7 @@ export class PhonePipe implements PipeTransform {
       }
       return ("(" + area + ")" + number).trim().slice(0, 13);
     } else {
+      area.wrap(area.replace(/\D/g, '').substring(0, area.length < 4 ? area.length : 4));
       return "(" + area;
     }
   }

@@ -38,4 +38,14 @@ export class RegisterComponent implements OnInit {
     this.invalid = false;
     this.errors = [];
   }
+
+  phoneKeyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    const inputChar = String.fromCharCode(event.charCode);
+
+    if (!pattern.test(inputChar)) {
+      // invalid character, prevent input
+      event.preventDefault();
+    }
+  }
 }
