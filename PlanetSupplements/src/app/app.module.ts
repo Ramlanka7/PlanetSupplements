@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
+import { PhonePipe } from 'app/pipes/phonepipe/phone.pipe';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    PhonePipe
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),

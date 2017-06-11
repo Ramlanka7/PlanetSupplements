@@ -1,5 +1,5 @@
-﻿import { Component, OnInit } from '@angular/core';
-import { Register } from 'app/Model/Register'
+﻿import { Component, OnInit} from '@angular/core';
+import { Register } from 'app/Model/Register';
 
 @Component({
   selector: 'app-register',
