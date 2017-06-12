@@ -35,7 +35,6 @@ export class PhonePipe implements PipeTransform {
       }
       return ("(" + area + ")" + number).trim().slice(0, 13);
     } else {
-      area.wrap(area.replace(/\D/g, '').substring(0, area.length < 4 ? area.length : 4));
       return "(" + area;
     }
   }
