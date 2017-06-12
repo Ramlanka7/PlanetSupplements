@@ -9,20 +9,32 @@
 
     <div class="row">
       <div class="col-md-4">
+        <div class="md-errors-spacer" [hidden]="email.valid || email.untouched" style="color: red">
+          <div *ngIf="email.errors && email.errors.required">
+            Email is required
+          </div>
+          <div *ngIf="email.errors && email.errors.pattern">
+            Email is invalid
+          </div>
+        </div>
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Email" minlength="5" maxlength="50" [(ngModel)]="register.email" required >
+          <input class="md-block" mdInput placeholder="Email"
+                 minlength="5" maxlength="50"
+                 id="email" type="text"
+                 #email="ngModel" [(ngModel)]="register.email"
+                 required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Password" type="password" minlength="5" maxlength="15" [(ngModel)]="register.password" required >
+          <input class="md-block" mdInput placeholder="Password" type="password" minlength="5" maxlength="15" [(ngModel)]="register.password" required>
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input mdInput placeholder="Confirm Password" type="password" minlength="5" maxlength="15" [(ngModel)]="register.confirmPassword" required >
+          <input mdInput placeholder="Confirm Password" type="password" minlength="5" maxlength="15" [(ngModel)]="register.confirmPassword" required>
         </md-input-container>
       </div>
     </div>
@@ -30,13 +42,13 @@
     <div class="row">
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="First Name" maxlength="25" [(ngModel)]="register.firstName" required >
+          <input class="md-block" mdInput placeholder="First Name" maxlength="25" [(ngModel)]="register.firstName" required>
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input mdInput placeholder="Last Name" [(ngModel)]="register.lastName" maxlength="25" required >
+          <input mdInput placeholder="Last Name" [(ngModel)]="register.lastName" maxlength="25" required>
         </md-input-container>
       </div>
       <div class="col-md-4">
@@ -69,14 +81,14 @@
       <div class="col-md-4">
         <md-select placeholder="State" class="maxWidth" style="margin-top: 5px;" [(ngModel)]="register.state">
           <md-option *ngFor="let state of register.states" [value]="state.value">
-           {{ state.viewValue }}
+            {{ state.viewValue }}
           </md-option>
         </md-select>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Zip Code" maxlength="5" [(ngModel)]="register.zipCode" (keypress)="keyPressNumericOnly($event)" >
+          <input class="md-block" mdInput placeholder="Zip Code" maxlength="5" [(ngModel)]="register.zipCode" (keypress)="keyPressNumericOnly($event)">
         </md-input-container>
       </div>
     </div>
