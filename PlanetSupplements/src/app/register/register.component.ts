@@ -1,4 +1,4 @@
-﻿import { Component, OnInit} from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { Register } from 'app/Model/Register';
 
 @Component({
@@ -6,7 +6,8 @@ import { Register } from 'app/Model/Register';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.less']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
+
   private register = new Register();
 
   invalid = false;
@@ -19,9 +20,6 @@ export class RegisterComponent implements OnInit {
       { value: 'TN', viewValue: 'Tennessee' },
       { value: 'VA', viewValue: 'Virginia' }
     ];
-  }
-
-  ngOnInit() {
   }
 
   registerUser() {

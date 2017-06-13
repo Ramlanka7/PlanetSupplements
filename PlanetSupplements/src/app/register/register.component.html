@@ -19,13 +19,17 @@
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Password" type="password" minlength="5" maxlength="15" [(ngModel)]="register.password" required>
+          <input class="md-block" mdInput placeholder="Password" type="password"
+                 minlength="5" maxlength="15"
+                 [(ngModel)]="register.password" required>
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input mdInput placeholder="Confirm Password" type="password" minlength="5" maxlength="15" [(ngModel)]="register.confirmPassword" required>
+          <input mdInput placeholder="Confirm Password" type="password"
+                 minlength="5" maxlength="15"
+                 [(ngModel)]="register.confirmPassword" required>
         </md-input-container>
       </div>
     </div>
@@ -33,18 +37,23 @@
     <div class="row">
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="First Name" maxlength="25" [(ngModel)]="register.firstName" required>
+          <input class="md-block" mdInput placeholder="First Name" maxlength="25"
+                 [(ngModel)]="register.firstName" required>
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input mdInput placeholder="Last Name" [(ngModel)]="register.lastName" maxlength="25" required>
+          <input mdInput placeholder="Last Name" maxlength="25" required
+                 [(ngModel)]="register.lastName">
         </md-input-container>
       </div>
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input mdInput (keypress)="keyPressNumericOnly($event)" placeholder="Phone Number" [ngModel]="register.phoneNumber | phone" (ngModelChange)="register.phoneNumber=$event" maxlength="13">
+          <input mdInput (keypress)="keyPressNumericOnly($event)"
+                 placeholder="Phone Number" maxlength="13"
+                 [ngModel]="register.phoneNumber | phone"
+                 (ngModelChange)="register.phoneNumber=$event">
         </md-input-container>
       </div>
     </div>
@@ -52,18 +61,21 @@
     <div class="row">
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Address 1" maxlength="35" [(ngModel)]="register.address1">
+          <input class="md-block" mdInput placeholder="Address 1" maxlength="35"
+                 [(ngModel)]="register.address1">
         </md-input-container>
       </div>
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Address 2" maxlength="35" [(ngModel)]="register.address2">
+          <input class="md-block" mdInput placeholder="Address 2" maxlength="35"
+                 [(ngModel)]="register.address2">
         </md-input-container>
       </div>
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="City" maxlength="25" [(ngModel)]="register.city">
+          <input class="md-block" mdInput placeholder="City" maxlength="25"
+                 [(ngModel)]="register.city">
         </md-input-container>
       </div>
     </div>
@@ -79,7 +91,9 @@
 
       <div class="col-md-4">
         <md-input-container class="maxWidth">
-          <input class="md-block" mdInput placeholder="Zip Code" maxlength="5" [(ngModel)]="register.zipCode" (keypress)="keyPressNumericOnly($event)" />
+          <input class="md-block" mdInput placeholder="Zip Code" maxlength="5"
+                 [(ngModel)]="register.zipCode"
+                 (keypress)="keyPressNumericOnly($event)" />
         </md-input-container>
       </div>
     </div>
