@@ -7,9 +7,11 @@ import { Login } from 'app/Model/Login';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent {
+
   private login = new Login();
 
   invalid = false;
+
   canUserLogin() {
     if (this.login.email && this.login.password) {
       this.invalid = this.validateEmail(this.login.email);
@@ -19,6 +21,7 @@ export class LoginComponent {
   }
 
   loginUser() {
+    //todo: Implement login functionality
   }
 
   validateEmail(email: string) {
