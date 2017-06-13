@@ -4,26 +4,37 @@
       <div class="formContainer">
         <div>
           <md-input-container class="maxWidth">
-            <input class="md-block" mdInput placeholder="Email" >
+            <input class="md-block" mdInput placeholder="Email" type="email"
+                   minlength="5" maxlength="50"
+                   [(ngModel)]="login.email"
+                   required email
+                   (blur)="canUserLogin($event.target.value)">
           </md-input-container>
         </div>
-      
+
         <div>
           <md-input-container class="maxWidth">
-            <input mdInput placeholder="Password" type="password" >
+            <input class="md-block" mdInput placeholder="Password" type="password"
+                   minlength="5" maxlength="15"
+                   [(ngModel)]="login.password" required
+                   (blur)="canUserLogin($event.target.value)">
           </md-input-container>
         </div>
+
         <div>
-          <md-checkbox >Remember Me</md-checkbox>
+          <md-checkbox [(ngModel)]="login.rememberMe">Remember Me</md-checkbox>
         </div>
+
         <div class="topMargin">
-          <button md-raised-button class="btn-block" color="primary">Sign In</button>
+          <button md-raised-button class="btn-block" color="primary" [disabled]="!invalid" (click)="loginUser()">Sign In</button>
         </div>
+
         <div class="topMargin">
           <a href="#" class="forgot-password">
             Forgot the password?
           </a>
         </div>
+
         <div class="topMargin">
           <a [routerLink]="['/register']">Register</a>
         </div>
