@@ -99,9 +99,16 @@
     </div>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-12">
         <button md-raised-button color="primary" (click)="registerUser()">Register</button>
-        <button md-raised-button (click)="clearForm()">Clear</button>
+        <button md-raised-button (click)="clearForm()">Clear</button> 
+        
+        &nbsp; or Sign Up using 
+
+        <img class="image" src="../../assets/facebook-icon.png" (click)="authenticateFacebook()" />
+
+        <img class="image" src="../../assets/twitter-icon.png" />
+
       </div>
     </div>
   </div>

@@ -72,8 +72,10 @@
     <Content Include="src\app\login\login.component.html" />
     <Content Include="src\app\register\register.component.html" />
     <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\assets\facebook-icon.png" />
     <Content Include="src\assets\logo.png" />
     <Content Include="src\assets\favicon.png" />
+    <Content Include="src\assets\twitter-icon.png" />
     <Content Include="src\styles.less" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
@@ -116,6 +118,7 @@
     <TypeScriptCompile Include="src\app\pipes\phonepipe\phone.pipe.ts" />
     <TypeScriptCompile Include="src\app\register\register.component.spec.ts" />
     <TypeScriptCompile Include="src\app\register\register.component.ts" />
+    <TypeScriptCompile Include="src\app\services\registerService.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +28,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, HttpModule,
     MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule, BrowserAnimationsModule
   ],
   providers: [],
