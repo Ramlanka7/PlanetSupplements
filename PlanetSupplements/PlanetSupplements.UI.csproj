@@ -70,12 +70,17 @@
     <Content Include="src\app\app.component.less" />
     <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\login\login.component.html" />
+    <Content Include="src\app\product\product.component.html" />
     <Content Include="src\app\register\register.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\assets\facebook-icon.png" />
     <Content Include="src\assets\google-icon.jpg" />
     <Content Include="src\assets\logo.png" />
     <Content Include="src\assets\favicon.png" />
+    <Content Include="src\assets\product\1.jpg" />
+    <Content Include="src\assets\product\2.jpg" />
+    <Content Include="src\assets\product\3.jpg" />
+    <Content Include="src\assets\product\4.jpg" />
     <Content Include="src\assets\twitter-icon.png" />
     <Content Include="src\styles.less" />
     <Content Include="src\tsconfig.app.json" />
@@ -87,6 +92,7 @@
     <Content Include="src\app\login\login.component.less" />
     <Content Include="src\app\home\home.component.less" />
     <Content Include="src\app\register\register.component.less" />
+    <Content Include="src\app\product\product.component.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -117,6 +123,8 @@
     <TypeScriptCompile Include="src\app\Model\Register.ts" />
     <TypeScriptCompile Include="src\app\pipes\phonepipe\phone.pipe.spec.ts" />
     <TypeScriptCompile Include="src\app\pipes\phonepipe\phone.pipe.ts" />
+    <TypeScriptCompile Include="src\app\product\product.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\product\product.component.ts" />
     <TypeScriptCompile Include="src\app\register\register.component.spec.ts" />
     <TypeScriptCompile Include="src\app\register\register.component.ts" />
     <TypeScriptCompile Include="src\app\services\registerService.ts" />
