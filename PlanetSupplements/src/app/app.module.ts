@@ -10,6 +10,7 @@ import { MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelect
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { PhonePipe } from 'app/pipes/phonepipe/phone.pipe';
+import { Angular2SocialLoginModule } from "angular2-social-login";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +18,16 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
+
+let providers = {
+  "google": {
+    "clientId": "55565887153-87jh8k8s5qq46hg9csmd18pvchmgcdvl.apps.googleusercontent.com"
+  },
+  "facebook": {
+    "clientId": "1674757496165279",
+    "apiVersion": "v2.8"
+  }
+};
 
 @NgModule({
   declarations: [
@@ -28,10 +39,12 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),
-    BrowserModule, FormsModule, HttpModule,
+    BrowserModule, FormsModule, HttpModule, Angular2SocialLoginModule,
     MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+Angular2SocialLoginModule.loadProvidersScripts((providers) as any);

@@ -73,6 +73,7 @@
     <Content Include="src\app\register\register.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\assets\facebook-icon.png" />
+    <Content Include="src\assets\google-icon.jpg" />
     <Content Include="src\assets\logo.png" />
     <Content Include="src\assets\favicon.png" />
     <Content Include="src\assets\twitter-icon.png" />

@@ -1,9 +1,8 @@
-﻿import { Component, Injectable } from '@angular/core';
-import { Location } from '@angular/common';
+﻿import { Component } from '@angular/core';
 import { Register } from 'app/Model/Register';
-import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
 import { RegisterService } from "app/services/registerService";
+import { AuthService } from "angular2-social-login";
 
 @Component({
   selector: 'app-register',
@@ -17,9 +16,10 @@ export class RegisterComponent {
   invalid = false;
 
   errors: Array<string> = [];
-
+  
   constructor(private http: Http,
-    private configProvider: RegisterService) {
+    private configProvider: RegisterService,
+    private authService: AuthService) {
     this.register.states = [
       { value: 'AL', viewValue: 'Alabama' },
       { value: 'TN', viewValue: 'Tennessee' },
@@ -99,8 +99,18 @@ export class RegisterComponent {
   }
 
   authenticateFacebook() {
-    window.location.href = 'https://www.facebook.com/v2.9/dialog/oauth?client_id=1674757496165279&redirect_uri=8142b1f5fef3fb1f1ee14a2b60488bb5&scope=public_profile'; //+
-      //this.configProvider.config.facebook.clientId +
-      //'&redirect_uri=' + this.configProvider.config.facebook.redirectURI + '&scope=public_profile';
+    let details = this.authService.login("facebook").subscribe(
+      (data) => {
+        //todo: Call web api to register user
+      }
+    );
+  }
+
+  authenticateGoogle() {
+    let details = this.authService.login("google").subscribe(
+      (data) => {
+        //todo: Call web api to register user
+      }
+    );
   }
 }
