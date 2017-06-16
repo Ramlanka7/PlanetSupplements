@@ -7,14 +7,14 @@
         <md-card-content>
           <div class="text-center">
             <p class="text-primary">
-              Cellucor C4 Ice Blue Razz 30 serving
+              {{ product.name }}
             </p>
 
-            <h4>$29.99</h4>
+            <h4>{{ product.price }}</h4>
           </div>
         </md-card-content>
         <div class="text-center">
-          <button md-raised-button color="primary">ADD TO CART</button>
+          <button md-raised-button color="primary" (click)="addToCart()">ADD TO CART</button>
         </div>
       </md-card>
     </div>

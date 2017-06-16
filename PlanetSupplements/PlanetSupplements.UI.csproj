@@ -120,6 +120,7 @@
     <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\app\Model\Login.ts" />
+    <TypeScriptCompile Include="src\app\Model\Product.ts" />
     <TypeScriptCompile Include="src\app\Model\Register.ts" />
     <TypeScriptCompile Include="src\app\pipes\phonepipe\phone.pipe.spec.ts" />
     <TypeScriptCompile Include="src\app\pipes\phonepipe\phone.pipe.ts" />
@@ -128,6 +129,7 @@
     <TypeScriptCompile Include="src\app\register\register.component.spec.ts" />
     <TypeScriptCompile Include="src\app\register\register.component.ts" />
     <TypeScriptCompile Include="src\app\services\registerService.ts" />
+    <TypeScriptCompile Include="src\app\services\sharedService.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
