@@ -7,14 +7,14 @@
     </button>
     <a class="navbar-brand" href="#">
       <div class="projectTitle">
-        <b >PLANET</b><br />SUPPLEMENTS
+        <b>PLANET</b><br />SUPPLEMENTS
       </div>
     </a>
   </div>
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle hyperLink" data-toggle="dropdown">Vitamins <b class="caret"></b></a>
+        <a class="dropdown-toggle hyperLink" data-toggle="dropdown" [routerLink]="['./product']">Vitamins<b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
@@ -117,7 +117,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a class="hyperLink" [routerLink]="['./login']">Login</a></li>
       <li><a class="hyperLink" [routerLink]="['./register']">Register</a></li>
-      <li><a> <span class="glyphicon glyphicon-shopping-cart" style="font-size: 1.5em; margin-right: 25px;">{{ cartCount }}</span></a> </li>
+      <li><a> <span class="glyphicon glyphicon-shopping-cart shoppingCart">{{ cartCount }}</span></a> </li>
     </ul>
   </div>
 </div>
