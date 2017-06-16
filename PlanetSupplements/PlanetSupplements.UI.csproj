@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="src\app\app.component.less" />
+    <Content Include="src\app\cart\cart.component.html" />
     <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\login\login.component.html" />
     <Content Include="src\app\product\product.component.html" />
@@ -93,6 +94,7 @@
     <Content Include="src\app\home\home.component.less" />
     <Content Include="src\app\register\register.component.less" />
     <Content Include="src\app\product\product.component.less" />
+    <Content Include="src\app\cart\cart.component.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -115,6 +117,8 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\cart\cart.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\cart\cart.component.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
