@@ -1,9 +1,35 @@
-﻿.hyperLink{
-  margin:5px;
+﻿@media (min-width: 979px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
 }
 
-.navbar-brand{
+.dropdown > a:hover {
+  background-color: #673ab7;
+  background-image: none;
+  color: white;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #673ab7;
+  background-image: none;
+  color: white;
+}
+
+.navbar-brand {
   padding: 0;
+}
+
+.navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #673ab7;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
 }
 
 .projectTitle {
