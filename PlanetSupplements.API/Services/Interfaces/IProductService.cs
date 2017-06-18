@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using PlanetSupplements.API.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using PlanetSupplements.API.Models;
 
 namespace PlanetSupplements.API.Services.Interfaces
 {
@@ -9,5 +9,7 @@ namespace PlanetSupplements.API.Services.Interfaces
         Task<IEnumerable<Product>> GetAllProductsAsyc();
 
         Task<Product> GetProductByIdAsync(int productId);
+
+        Task<IEnumerable<Product>> GetProductsByCategoryIdAsync(int categoryId);
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace PlanetSupplements.API.Models
 {
@@ -16,5 +13,7 @@ namespace PlanetSupplements.API.Models
         public IEnumerable<byte[]> Images { get; set; }
 
         public bool OnSale { get; set; }
+
+        public List<int> Categories { get; set; }
     }
 }

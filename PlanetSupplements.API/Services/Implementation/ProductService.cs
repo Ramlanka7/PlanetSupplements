@@ -18,36 +18,54 @@ namespace PlanetSupplements.API.Services.Implementation
             return Task.Run(() => GetProductById(productId));
         }
 
+        public Task<IEnumerable<Product>> GetProductsByCategoryIdAsync(int categoryId)
+        {
+            return Task.Run(() => GetProductsByCategoryId(categoryId));
+        }
+
+        private IEnumerable<Product> GetProductsByCategoryId(int categoryId)
+        {
+            return GetAllProducts().Where(p => p.Categories.Contains(categoryId));
+        }
+
         private IEnumerable<Product> GetAllProducts()
         {
             return new List<Product>
             {
                 new Product
                 {
-                    ProductId = 1, Name = "Cellucor C4 Ice Blue Razz 30 serving", Price = 29.99
+                    ProductId = 1, Name = "Cellucor C4 Ice Blue Razz 30 serving", Price = 29.99, Categories = new List<int>{1,2}
                 },
                 new Product
                 {
-                    ProductId = 2, Name = "Adaptogen Science Tasty Whey Strawberry Creme 2lb", Price = 24.99
+                    ProductId = 2, Name = "Adaptogen Science Tasty Whey Strawberry Creme 2lb", Price = 24.99, Categories = new List<int>{3,4}
                 },
                 new Product
                 {
-                    ProductId = 3, Name = "NutraKey Whey Optima Chocolate Lava Cake", Price = 32.99
+                    ProductId = 3, Name = "NutraKey Whey Optima Chocolate Lava Cake", Price = 32.99, Categories = new List<int>{2,3}
                 },
                 new Product
                 {
-                    ProductId = 4, Name = "BSN SYNTHA-6 – Chocolate Peanut Butter 3lb", Price = 36.49
+                    ProductId = 4, Name = "BSN SYNTHA-6 – Chocolate Peanut Butter 3lb", Price = 36.49, Categories = new List<int>{1,4}
                 },
                 new Product
                 {
-                    ProductId = 5, Name = "CON-CRET Creatine HCL Lemon Lime 1.76oz", Price = 29.99
+                    ProductId = 5, Name = "Animal Flex 44 packs", Price = 34.99, Categories = new List<int>{5,6}
+                },
+                new Product
+                {
+                    ProductId = 6, Name = "CON-CRET Creatine HCL Lemon Lime 1.76oz", Price = 29.99, Categories = new List<int>{1,6}
+                },
+                new Product
+                {
+                    ProductId = 7, Name = "Now Foods – Vitamin E Cream 28,000 IU 4 oz", Price = 8.99, Categories = new List<int>{7}
                 }
             };
         }
 
         private Product GetProductById(int productId)
         {
-            return this.GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
+            return GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
         }
     }
 }
