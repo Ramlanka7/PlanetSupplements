@@ -14,7 +14,7 @@
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
       <li class="dropdown">
-        <a [routerLink]="['./product']" class="dropdown-toggle disabled">Vitamins</a>
+        <a (click)="getProducts(1)" class="dropdown-toggle disabled">Vitamins</a>
         <ul class="dropdown-menu">
           <li><a [routerLink]="['./product']">Vitamins</a></li>
           <li><a [routerLink]="['./product']">Minerals</a></li>

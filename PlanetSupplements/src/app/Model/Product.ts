@@ -8,4 +8,6 @@
   onSale: boolean;
 
   image: string;
+
+  categories: any;
 }
