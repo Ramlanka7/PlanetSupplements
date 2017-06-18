@@ -47,8 +47,7 @@ namespace PlanetSupplements.API.Services.Implementation
 
         private Product GetProductById(int productId)
         {
-            var allProducts = this.GetAllProducts();
-            return allProducts.FirstOrDefault(p => p.ProductId == productId);
+            return this.GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
         }
     }
 }
