@@ -17,6 +17,7 @@ namespace PlanetSupplements.API.Controllers
             this.productService = new ProductService();
         }
 
+        [HttpGet, Route("api/Product/GetProductsByCategory/{categoryId}")]
         public async Task<IEnumerable<Product>> GetProductsByCategory(int categoryId)
         {
             return await this.productService.GetProductsByCategoryIdAsync(categoryId);
