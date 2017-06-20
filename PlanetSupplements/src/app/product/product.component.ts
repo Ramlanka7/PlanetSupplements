@@ -9,14 +9,19 @@ import { SharedService } from 'app/services/sharedService';
 })
 export class ProductComponent implements OnInit {
 
-  private product = new Product();
+  private newProduct = new Product();
+
+  private products = new Array<Product>();
 
   constructor(private sharedService: SharedService) { }
 
   ngOnInit() {
-    this.product.name = "Cellucor C4 Ice Blue Razz 30 serving";
-    this.product.productId = 1;
-    this.product.price = "$29.99";
+    
+    this.newProduct.name = "Cellucor C4 Ice Blue Razz 30 serving";
+    this.newProduct.productId = 1;
+    this.newProduct.price = "$29.99";
+
+    this.products.push(this.newProduct);
   }
 
   addToCart() {

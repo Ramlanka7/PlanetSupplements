@@ -23,6 +23,6 @@ export class AppComponent {
 
   getProducts(categoryId: number) {
     var products = this.productService.getProductsByCategory(categoryId);
-    alert(products);
+  
   }
 }

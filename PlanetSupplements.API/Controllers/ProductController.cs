@@ -4,9 +4,11 @@ using PlanetSupplements.API.Services.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PlanetSupplements.API.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProductController : ApiController
     {
         private readonly IProductService productService;
