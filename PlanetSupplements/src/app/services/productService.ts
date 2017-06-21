@@ -10,29 +10,9 @@ export class ProductService {
   private productUrl = "http://localhost:53286/api/Product/";
 
   constructor(private http: Http) { }
-
-  obj: any;
-
-  public getProductsByCategory(categoryId: number): Observable<any> {
-   // let url = `http://localhost:53286/api/Product/GetProductsByCategory/` + categoryId;
-
-    let adf = this.http.get(this.productUrl + `/GetProductsByCategory/` + categoryId)
-      .map(response => response)
-      .subscribe((res) => {
-          this.obj = res.json();
-          console.log(this.obj);
-        },
-        (err) => console.log(err),
-        () => console.log("Done")
-      );
-
-    return (adf) as any;
-    //  .get(`${this.baseUrl}Product/GetProductsByCategory/` + categoryId)
-    //return this.http
-    //  .get(`${this.baseUrl}Product/GetProductsByCategory/` + categoryId)
-    //  .map((response: Response) => {
-    //    let env: Product = response.json();
-    //    return env;
-    //  });
+  
+  public getProductsByCategory(categoryId: number): Observable<Product[]> {
+    return this.http.get(this.productUrl + `GetProductsByCategory/` + categoryId)
+      .map((res: Response) => res.json());
   }
 }

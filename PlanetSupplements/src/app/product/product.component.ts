@@ -1,8 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Product } from 'app/Model/Product';
 import { SharedService } from 'app/services/sharedService';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductService } from 'app/services/productService';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-product',
@@ -10,28 +11,21 @@ import { ProductService } from 'app/services/productService';
   styleUrls: ['./product.component.less']
 })
 export class ProductComponent implements OnInit {
-
-  private newProduct = new Product();
-
-  private products: any;// new Array<Product>();
-
-  categoryId: number;
+  private products = new Array<Product>();
 
   constructor(private sharedService: SharedService,
     private productService: ProductService,
-    route: ActivatedRoute) {
-    this.categoryId = route.snapshot.params["id"];
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   ngOnInit() {
-
-    var prods = this.productService.getProductsByCategory(this.categoryId);
-    this.products = prods;
-    //this.newProduct.name = "Cellucor C4 Ice Blue Razz 30 serving";
-    //this.newProduct.productId = 1;
-    //this.newProduct.price = "$29.99";
-
-    //this.products.push(this.newProduct);
+    this.route.params
+      // (+) converts string 'id' to a number
+      .switchMap((params: Params) => this.productService.getProductsByCategory(+params['id']))
+      .subscribe((data: Array<Product>) => {
+        this.products = data;
+      });
   }
 
   addToCart() {
