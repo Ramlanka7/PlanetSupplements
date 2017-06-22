@@ -13,15 +13,18 @@ import { PhonePipe } from 'app/pipes/phonepipe/phone.pipe';
 import { Angular2SocialLoginModule } from "angular2-social-login";
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'product', component: ProductComponent },
-  { path: 'product/:id', component: ProductComponent },
+  { path: 'product/:productName/:id', component: ProductComponent },
+  { path: 'Vitamins', component: ProductComponent },
   { path: 'cart', component: CartComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', component: HomeComponent},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 let providers = {
@@ -42,7 +45,8 @@ let providers = {
     RegisterComponent,
     PhonePipe,
     ProductComponent,
-    CartComponent
+    CartComponent,
+    PageNotFoundComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),

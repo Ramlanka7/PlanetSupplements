@@ -4,6 +4,7 @@ import { SharedService } from 'app/services/sharedService';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductService } from 'app/services/productService';
 import 'rxjs/add/operator/switchMap';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product',
@@ -13,18 +14,27 @@ import 'rxjs/add/operator/switchMap';
 export class ProductComponent implements OnInit {
   private products = new Array<Product>();
 
+  private categoryName: string;
+
+  private categoryId: number;
+
   constructor(private sharedService: SharedService,
     private productService: ProductService,
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    public location: Location) {
+    this.categoryName = route.snapshot.params["productName"];
+    this.categoryId = route.snapshot.params["id"];
   }
 
   ngOnInit() {
+    this.location.go(this.categoryName);
     this.route.params
       // (+) converts string 'id' to a number
-      .switchMap((params: Params) => this.productService.getProductsByCategory(+params['id']))
+      .switchMap((params: Params) => this.productService.getProductsByCategory(this.categoryId))
       .subscribe((data: Array<Product>) => {
         this.products = data;
+        
       });
   }
 
