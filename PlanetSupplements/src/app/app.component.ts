@@ -11,12 +11,15 @@ import { ProductService } from 'app/services/productService';
 export class AppComponent {
   public cartCount: number = 0;
 
+  public productIds: number[] = new Array();
+
   onCartUpdate: boolean;
 
   constructor(sharedService: SharedService, private productService: ProductService) {
     sharedService.onAddToCart.subscribe(
-      () => {
+      (productId) => {
         this.cartCount = this.cartCount + 1;
+        this.productIds.push(productId);
       }
     );
   }

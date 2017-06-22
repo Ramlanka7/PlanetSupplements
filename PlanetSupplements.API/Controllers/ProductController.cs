@@ -25,6 +25,14 @@ namespace PlanetSupplements.API.Controllers
             return await this.productService.GetProductsByCategoryIdAsync(categoryId);
         }
 
+        [HttpGet, Route("api/Product/GetProductsByIds")]
+        public async Task<IEnumerable<Product>> GetProductsByIds([FromUri] int[] productIds)
+        {
+            if (productIds == null) return new List<Product>();
+
+            return await this.productService.GetProductsByIdsAsync(productIds);
+        }
+
         public async Task<Product> GetProductById(int productId)
         {
             return await this.productService.GetProductByIdAsync(productId);

@@ -11,5 +11,7 @@ namespace PlanetSupplements.API.Services.Interfaces
         Task<Product> GetProductByIdAsync(int productId);
 
         Task<IEnumerable<Product>> GetProductsByCategoryIdAsync(int categoryId);
+
+        Task<IEnumerable<Product>> GetProductsByIdsAsync(int[] productIds);
     }
 }

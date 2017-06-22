@@ -15,4 +15,9 @@ export class ProductService {
     return this.http.get(this.productUrl + `GetProductsByCategory/` + categoryId)
       .map((res: Response) => res.json());
   }
+
+  public getProductsByIds(productIds: number[]): Observable<Product[]> {
+    return this.http.get(this.productUrl + `GetProductsByIds/` + productIds)
+      .map((res: Response) => res.json());
+  }
 }

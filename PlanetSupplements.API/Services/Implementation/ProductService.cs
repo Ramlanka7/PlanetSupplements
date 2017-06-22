@@ -10,22 +10,22 @@ namespace PlanetSupplements.API.Services.Implementation
     {
         public Task<IEnumerable<Product>> GetAllProductsAsyc()
         {
-            return Task.Run(() => GetAllProducts());
+            return Task.Run(() => this.GetAllProducts());
         }
 
         public Task<Product> GetProductByIdAsync(int productId)
         {
-            return Task.Run(() => GetProductById(productId));
+            return Task.Run(() => this.GetProductById(productId));
         }
 
         public Task<IEnumerable<Product>> GetProductsByCategoryIdAsync(int categoryId)
         {
-            return Task.Run(() => GetProductsByCategoryId(categoryId));
+            return Task.Run(() => this.GetProductsByCategoryId(categoryId));
         }
 
-        private IEnumerable<Product> GetProductsByCategoryId(int categoryId)
+        public Task<IEnumerable<Product>> GetProductsByIdsAsync(int[] productIds)
         {
-            return GetAllProducts().Where(p => p.Categories.Contains(categoryId));
+            return Task.Run(() => this.GetProductsByCategoryIds(productIds));
         }
 
         private IEnumerable<Product> GetAllProducts()
@@ -65,7 +65,17 @@ namespace PlanetSupplements.API.Services.Implementation
 
         private Product GetProductById(int productId)
         {
-            return GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
+            return this.GetAllProducts().FirstOrDefault(p => p.ProductId == productId);
+        }
+
+        private IEnumerable<Product> GetProductsByCategoryId(int categoryId)
+        {
+            return this.GetAllProducts().Where(p => p.Categories.Contains(categoryId));
+        }
+
+        private IEnumerable<Product> GetProductsByCategoryIds(int[] productIds)
+        {
+            return this.GetAllProducts().Where(s => productIds.Contains(s.ProductId));
         }
     }
 }
