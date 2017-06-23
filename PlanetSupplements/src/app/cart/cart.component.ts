@@ -1,5 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { Product } from 'app/Model/Product';
+import { Cart } from 'app/Model/Cart';
+import { CartViewModel } from 'app/Model/CartViewModel';
 import { ProductService } from 'app/services/productService';
 import { SharedService } from 'app/services/sharedService';
 import 'rxjs/add/operator/switchMap';
@@ -11,8 +12,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class CartComponent implements OnInit {
   public productIds: number[] = new Array();
-
-  private products = new Array<Product>();
+  
+  private cart: CartViewModel;
 
   constructor(private sharedService: SharedService,
     private productService: ProductService) {
@@ -22,8 +23,8 @@ export class CartComponent implements OnInit {
     this.productIds = this.sharedService.retrieveProductIds();
 
     this.productService.getProductsByIds(this.productIds)
-      .subscribe((data: Array<Product>) => {
-        this.products = data;
+      .subscribe((data: CartViewModel) => {
+        this.cart = data;
       });
   }
 }

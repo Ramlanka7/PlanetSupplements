@@ -23,7 +23,7 @@ namespace PlanetSupplements.API.Services.Implementation
             return Task.Run(() => this.GetProductsByCategoryId(categoryId));
         }
 
-        public Task<IEnumerable<Product>> GetProductsByIdsAsync(int[] productIds)
+        public Task<IEnumerable<Product>> GetProductsByIdsAsync(List<int> productIds)
         {
             return Task.Run(() => this.GetProductsByCategoryIds(productIds));
         }
@@ -73,7 +73,7 @@ namespace PlanetSupplements.API.Services.Implementation
             return this.GetAllProducts().Where(p => p.Categories.Contains(categoryId));
         }
 
-        private IEnumerable<Product> GetProductsByCategoryIds(int[] productIds)
+        private IEnumerable<Product> GetProductsByCategoryIds(ICollection<int> productIds)
         {
             return this.GetAllProducts().Where(s => productIds.Contains(s.ProductId));
         }

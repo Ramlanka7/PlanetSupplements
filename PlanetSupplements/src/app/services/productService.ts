@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Product } from "app/Model/Product";
+import { CartViewModel } from "app/Model/CartViewModel";
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -16,7 +17,7 @@ export class ProductService {
       .map((res: Response) => res.json());
   }
 
-  public getProductsByIds(productIds: number[]): Observable<Product[]> {
+  public getProductsByIds(productIds: number[]): Observable<CartViewModel> {
 
     //TODO: Not a good way to send query string like below. Need to Pass as Object
     let queryString = null;

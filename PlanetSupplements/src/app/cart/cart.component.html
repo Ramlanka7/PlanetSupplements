@@ -1,4 +1,4 @@
-﻿<div class="container">
+﻿<div class="container" *ngIf="cart != null">
   <div class="row"><br /></div>
   <md-card class="example-card">
     <div class="row">
@@ -15,17 +15,22 @@
         </div>
         <hr />
 
-        <div *ngFor="let product of products">
-          <div class="row">
+        <div *ngFor="let product of cart.Cart">
+          <div class="row rowMinHeight" >
             <div class="col-md-5">
               {{ product.Name }}
             </div>
             <div class="col-md-2">
               {{ product.Price }}
             </div>
-            <div class="col-md-3">1</div>
-            <div class="col-md-2">{{ product.Price }}</div>
+            <div class="col-md-3">
+              <button  color="default" class="qtyButton" >-</button>
+              {{ product.Quantity }}
+              <button color="default" class="qtyButton" >+</button>
+            </div>
+            <div class="col-md-2">{{ product.TotalPrice }}</div>
           </div>
+        
           <hr />
         </div>
 
@@ -36,19 +41,23 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <h4>CART TOTALS</h4>
+      <div class="col-md-3 leftBorder">
+        <b>CART TOTALS</b>
         <hr />
         <div class="row">
           <p class="alignleft">Subtotal</p>
-          <p class="alignright">$29.99</p>
+          <p class="alignright">{{ cart.SubTotal }}</p>
+        </div>
+        <hr />
+        <div class="row">
+          <p class="alignleft">Tax</p>
+          <p class="alignright">{{ cart.Tax }}</p>
         </div>
         <hr />
         <div class="row">
           <p class="alignleft">Total</p>
-          <p class="alignright">$29.99</p>
+          <p class="alignright">{{ cart.Total }}</p>
         </div>
-
         <button md-raised-button class="btn-block" color="primary">PROCEED TO CHECKOUT</button>
       </div>
     </div>
