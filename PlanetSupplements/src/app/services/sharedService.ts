@@ -5,4 +5,15 @@ export class SharedService {
   onAddToCart: EventEmitter<number> = new EventEmitter();
 
   cartCount: number;
+
+  productIds: number[] = [];
+
+  saveProductIds(ids: any) {
+    this.productIds = ids;
+  }
+
+  retrieveProductIds() {
+    return this.productIds;
+  }
+
 }

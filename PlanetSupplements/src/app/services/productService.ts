@@ -10,14 +10,25 @@ export class ProductService {
   private productUrl = "http://localhost:53286/api/Product/";
 
   constructor(private http: Http) { }
-  
+
   public getProductsByCategory(categoryId: number): Observable<Product[]> {
     return this.http.get(this.productUrl + `GetProductsByCategory/` + categoryId)
       .map((res: Response) => res.json());
   }
 
   public getProductsByIds(productIds: number[]): Observable<Product[]> {
-    return this.http.get(this.productUrl + `GetProductsByIds/` + productIds)
+
+    //TODO: Not a good way to send query string like below. Need to Pass as Object
+    let queryString = null;
+    for (var i = 0; i < productIds.length; i++) {
+      if (i === 0) {
+        queryString = "productIds=" + productIds[i];
+      } else {
+        queryString += "&productIds=" + productIds[i];
+      }
+    }
+
+    return this.http.get(this.productUrl + `GetProductsByIds/?` + queryString)
       .map((res: Response) => res.json());
   }
 }

@@ -75,7 +75,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a [routerLink]="['./login']">Login</a></li>
       <li><a [routerLink]="['./register']">Register</a></li>
-      <li><a [routerLink]="['./cart']"> <span class="glyphicon glyphicon-shopping-cart shoppingCart">{{ cartCount }}</span></a> </li>
+      <li><a style="cursor: pointer" (click)="goToCart()"> <span class="glyphicon glyphicon-shopping-cart shoppingCart">{{ cartCount }}</span></a> </li>
     </ul>
   </div>
 </div>
