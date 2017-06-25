@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule } from '@angular/material';
+import { MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule, MdMenuModule, MdTabsModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { PhonePipe } from 'app/pipes/phonepipe/phone.pipe';
@@ -63,7 +63,7 @@ let providers = {
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),
     BrowserModule, FormsModule, HttpModule, Angular2SocialLoginModule,
-    MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule, BrowserAnimationsModule
+    MdButtonModule, MdCheckboxModule, MdInputModule, MdCardModule, MdSelectModule, BrowserAnimationsModule, MdMenuModule, MdTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

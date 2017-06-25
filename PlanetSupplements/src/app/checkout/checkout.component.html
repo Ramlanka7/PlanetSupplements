@@ -1,7 +1,137 @@
 ﻿<div class="container">
   <md-card>
     <md-card-content>
-      alksdjhflasjdfl
-      </md-card-content>
+      <md-tab-group  (selectedIndexChange)="selectedIndexChange($event)" 
+                     [selectedIndex]="selectedIndex">
+        <md-tab label="Billing Details">
+          <br/>
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Full Name" maxlength="25"
+                       required>
+              </md-input-container>
+            </div>
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input mdInput (keypress)="keyPressNumericOnly($event)"
+                       placeholder="Phone Number" maxlength="13">
+              </md-input-container>
+            </div>
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Address" maxlength="35"/>
+              </md-input-container>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="City" maxlength="25"/>
+              </md-input-container>
+            </div>
+            <div class="col-md-4">
+              <md-select placeholder="State" class="maxWidth" style="margin-top: 5px;">
+                <!--<md-option *ngFor="let state of register.states" [value]="state.value">
+                  {{ state.viewValue }}
+                </md-option>-->
+              </md-select>
+            </div>
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Zip Code" maxlength="5"/>
+              </md-input-container>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Name on Credit Card" maxlength="25" required>
+              </md-input-container>
+            </div>
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input mdInput placeholder="Credit Card Number" maxlength="17">
+              </md-input-container>
+            </div>
+            <div class="col-md-2">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="CVV" maxlength="4">
+              </md-input-container>
+            </div>
+
+            <div class="col-md-2">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Exp Date" maxlength="4">
+              </md-input-container>
+            </div>
+          </div>
+          
+          <div class="col-md-12 text-right">
+            <button md-raised-button color="primary" (click)="goToShippingTab()"><md-icon>Next ></md-icon></button>
+          </div>
+        </md-tab>
+        <md-tab label="Shipping Details">
+          <br />
+          <div class="col-md-12">
+            <md-checkbox>Same as Billing Address</md-checkbox>
+          </div>
+          
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Full Name" maxlength="25"
+                       required>
+              </md-input-container>
+            </div>
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input mdInput (keypress)="keyPressNumericOnly($event)"
+                       placeholder="Phone Number" maxlength="13">
+              </md-input-container>
+            </div>
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Address" maxlength="35"/>
+              </md-input-container>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="City" maxlength="25"/>
+              </md-input-container>
+            </div>
+            <div class="col-md-4">
+              <md-select placeholder="State" class="maxWidth" style="margin-top: 5px;">
+                <!--<md-option *ngFor="let state of register.states" [value]="state.value">
+                  {{ state.viewValue }}
+                </md-option>-->
+              </md-select>
+            </div>
+            <div class="col-md-4">
+              <md-input-container class="maxWidth">
+                <input class="md-block" mdInput placeholder="Zip Code" maxlength="5"/>
+              </md-input-container>
+            </div>
+          </div>
+          
+          <div class="col-md-12 text-right">
+            <button md-raised-button color="primary" (click)="goToBillingTab()"><md-icon>< Back</md-icon></button>
+            <button md-raised-button color="primary" (click)="goToReviewTab()"><md-icon>Next ></md-icon></button>
+          </div>
+        </md-tab>
+        
+        <md-tab label="Review Order">
+          <div class="col-md-12 text-right">
+            <button md-raised-button color="primary" (click)="goToShippingTab()"><md-icon>< Back</md-icon></button>
+            <button md-raised-button color="primary" (click)="placeOrder()"><md-icon>Place Order</md-icon></button>
+          </div>
+        </md-tab>
+      </md-tab-group>
+     </md-card-content>
 </md-card>
 </div>
