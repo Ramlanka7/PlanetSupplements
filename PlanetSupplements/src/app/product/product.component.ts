@@ -19,6 +19,9 @@ export class ProductComponent implements OnInit {
   private categoryName: string;
 
   private categoryId: number;
+
+  private isSpinner: boolean = true;
+
   constructor(private sharedService: SharedService,
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -27,7 +30,6 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.route.params
       .switchMap((params: Params): any => {
 
@@ -54,6 +56,7 @@ export class ProductComponent implements OnInit {
       })
       .subscribe((data: Array<Product>) => {
         this.products = data;
+        this.isSpinner = false;
       });
   }
 
