@@ -6,6 +6,16 @@ import { ProductService } from 'app/services/productService';
 import 'rxjs/add/operator/switchMap';
 import { Location } from '@angular/common';
 
+export enum Category {
+  Vitamins = 1,
+  SportsNutrition = 2,
+  MuscleBuilders = 3,
+  Protien = 4,
+  WeightGain = 5,
+  DietEnergey = 6,
+  HealthOils = 7
+}
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -18,6 +28,8 @@ export class ProductComponent implements OnInit {
 
   private categoryId: number;
 
+  //CategoryEnum: typeof Category = Category;
+
   constructor(private sharedService: SharedService,
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -28,13 +40,20 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.location.go(this.categoryName);
-    this.route.params
-      // (+) converts string 'id' to a number
-      .switchMap((params: Params) => this.productService.getProductsByCategory(this.categoryId))
+    // this.location.go(this.categoryName);
+    //this.route.params
+    // (+) converts string 'id' to a number
+    //.switchMap((params: Params) =>
+    //TODO: Not the right way, have to revisit this.
+    if (this.categoryId === undefined) {
+      if (this.categoryName !== undefined) {
+        this.categoryId = Category[this.categoryName];
+      }
+    }
+
+    this.productService.getProductsByCategory(this.categoryId)
       .subscribe((data: Array<Product>) => {
         this.products = data;
-        
       });
   }
 

@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { Cart } from 'app/Model/Cart';
+import { Product } from 'app/Model/Product';
 import { CartViewModel } from 'app/Model/CartViewModel';
 import { ProductService } from 'app/services/productService';
 import { SharedService } from 'app/services/sharedService';
@@ -26,5 +26,27 @@ export class CartComponent implements OnInit {
       .subscribe((data: CartViewModel) => {
         this.cart = data;
       });
+  }
+
+  addItem(product: any) {
+    product.quantity += 1;
+    this.updateCart(product);
+  }
+
+  removeItem(product: any) {
+    if (product.quantity >= 1) {
+      product.quantity = product.quantity - 1;
+      this.updateCart(product);
+    }
+  }
+
+  updateCart(product: any): void {
+    product.totalPrice = (product.price * product.quantity).toFixed(2);
+    let total: number = 0;
+    for (var i = 0; i < this.cart.cart.length; i++) {
+      total = parseFloat(total.toString()) + parseFloat(this.cart.cart[i].totalPrice.toString());
+    }
+    this.cart.subTotal = parseFloat(total.toFixed(2));
+    this.cart.total = parseFloat(this.cart.subTotal.toString()) + parseFloat(this.cart.tax.toString());
   }
 }

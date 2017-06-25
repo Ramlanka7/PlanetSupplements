@@ -15,20 +15,20 @@
         </div>
         <hr />
 
-        <div *ngFor="let product of cart.Cart">
+        <div *ngFor="let product of cart.cart">
           <div class="row rowMinHeight" >
             <div class="col-md-5">
-              {{ product.Name }}
+              {{ product.name }}
             </div>
             <div class="col-md-2">
-              {{ product.Price }}
+              {{ product.price }}
             </div>
             <div class="col-md-3">
-              <button  color="default" class="qtyButton" >-</button>
-              {{ product.Quantity }}
-              <button color="default" class="qtyButton" >+</button>
+              <button md-mini-fab (click)="removeItem(product)"><md-icon>-</md-icon></button>
+              {{ product.quantity }}
+              <button md-mini-fab (click)="addItem(product)"><md-icon>+</md-icon></button>
             </div>
-            <div class="col-md-2">{{ product.TotalPrice }}</div>
+            <div class="col-md-2">{{ product.totalPrice }}</div>
           </div>
         
           <hr />
@@ -36,8 +36,7 @@
 
         <div class="row">
           <div class="col-md-12">
-            <button md-raised-button color="default">CONTINUE SHOPPING</button>
-            <button md-raised-button color="default">UPDATE CART</button>
+            <button md-raised-button color="default" [routerLink]="['/']">CONTINUE SHOPPING</button>
           </div>
         </div>
       </div>
@@ -46,17 +45,17 @@
         <hr />
         <div class="row">
           <p class="alignleft">Subtotal</p>
-          <p class="alignright">{{ cart.SubTotal }}</p>
+          <p class="alignright">{{ cart.subTotal }}</p>
         </div>
         <hr />
         <div class="row">
           <p class="alignleft">Tax</p>
-          <p class="alignright">{{ cart.Tax }}</p>
+          <p class="alignright">{{ cart.tax }}</p>
         </div>
         <hr />
         <div class="row">
           <p class="alignleft">Total</p>
-          <p class="alignright">{{ cart.Total }}</p>
+          <p class="alignright">{{ cart.total }}</p>
         </div>
         <button md-raised-button class="btn-block" color="primary">PROCEED TO CHECKOUT</button>
       </div>

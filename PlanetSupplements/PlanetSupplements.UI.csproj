@@ -139,6 +139,7 @@
     <TypeScriptCompile Include="src\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\app\Model\Cart.ts" />
     <TypeScriptCompile Include="src\app\Model\CartViewModel.ts" />
+    <TypeScriptCompile Include="src\app\Model\categoryEnum.ts" />
     <TypeScriptCompile Include="src\app\Model\Login.ts" />
     <TypeScriptCompile Include="src\app\Model\Product.ts" />
     <TypeScriptCompile Include="src\app\Model\Register.ts" />

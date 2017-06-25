@@ -22,6 +22,12 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'product/:productName/:id', component: ProductComponent },
   { path: 'Vitamins', component: ProductComponent },
+  { path: 'SportsNutrition', component: ProductComponent },
+  { path: 'MuscleBuilders', component: ProductComponent },
+  { path: 'Protien', component: ProductComponent },
+  { path: 'WeightGain', component: ProductComponent },
+  { path: 'DietEnergey', component: ProductComponent },
+  { path: 'HealthOils', component: ProductComponent },
   { path: 'cart', component: CartComponent },
   { path: '', component: HomeComponent},
   { path: '**', component: PageNotFoundComponent }
