@@ -45,6 +45,9 @@ export class ProductComponent implements OnInit {
             }
           };
 
+          if (!this.categoryId) {
+            this.router.navigate(['/page-not-found']);
+          }
           this.location.go(this.categoryName);
         }
         return this.productService.getProductsByCategory(this.categoryId);

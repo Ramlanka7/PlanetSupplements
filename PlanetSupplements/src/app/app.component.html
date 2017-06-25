@@ -80,8 +80,8 @@
   </div>
 </div>
 
-<div class="center-container">
-  <router-outlet></router-outlet>
+<div class="center-container routerMarginTop">
+    <router-outlet></router-outlet>
 </div>
 
 <div id="footer">
@@ -107,16 +107,16 @@
       <div class="col-md-3">
         <h3>NEED HELP?</h3>
         <div class="hyperLink">
-          <a class="hyperLink" href="#about">Contact Us</a>
+          <a class="hyperLink" [routerLink]="['./contact']">Contact Us</a>
         </div>
         <div class="hyperLink">
-          <a class="hyperLink" href="#about">Help</a>
+          <a class="hyperLink" [routerLink]="['./home']">Help</a>
         </div>
         <div class="hyperLink">
-          <a class="hyperLink" href="#about">Site Map</a>
+          <a class="hyperLink" [routerLink]="['./home']">Site Map</a>
         </div>
         <div class="hyperLink">
-          <a class="hyperLink" href="#about">Search</a>
+          <a class="hyperLink" [routerLink]="['./home']">Search</a>
         </div>
       </div>
 

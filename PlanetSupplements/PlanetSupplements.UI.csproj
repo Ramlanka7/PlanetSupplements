@@ -79,6 +79,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="src\app\app.component.less" />
     <Content Include="src\app\cart\cart.component.html" />
+    <Content Include="src\app\contact-us\contact-us.component.html" />
     <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\login\login.component.html" />
     <Content Include="src\app\page-not-found\page-not-found.component.html" />
@@ -109,6 +110,7 @@
     <None Include="Properties\PublishProfiles\PlanetSupplement - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PlanetSupplements - Web Deploy.pubxml" />
     <Content Include="src\app\page-not-found\page-not-found.component.less" />
+    <Content Include="src\app\contact-us\contact-us.component.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -133,6 +135,8 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\cart\cart.component.spec.ts" />
     <TypeScriptCompile Include="src\app\cart\cart.component.ts" />
+    <TypeScriptCompile Include="src\app\contact-us\contact-us.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\contact-us\contact-us.component.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\login\login.component.spec.ts" />
