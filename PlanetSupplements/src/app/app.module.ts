@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'product', component: ProductComponent },
   { path: 'product/:productName/:id', component: ProductComponent },
-  { path: 'Vitamins', component: ProductComponent },
+  { path: ':productName', component: ProductComponent },
   { path: 'SportsNutrition', component: ProductComponent },
   { path: 'MuscleBuilders', component: ProductComponent },
   { path: 'Protien', component: ProductComponent },
