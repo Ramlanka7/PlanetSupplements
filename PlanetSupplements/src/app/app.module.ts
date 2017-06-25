@@ -15,6 +15,7 @@ import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'product/:productName/:id', component: ProductComponent },
   { path: ':productName', component: ProductComponent },
   { path: 'SportsNutrition', component: ProductComponent },
@@ -30,8 +33,7 @@ const routes: Routes = [
   { path: 'WeightGain', component: ProductComponent },
   { path: 'DietEnergey', component: ProductComponent },
   { path: 'HealthOils', component: ProductComponent },
-  { path: 'cart', component: CartComponent },
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -55,7 +57,8 @@ let providers = {
     ProductComponent,
     CartComponent,
     PageNotFoundComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    CheckoutComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: false }),

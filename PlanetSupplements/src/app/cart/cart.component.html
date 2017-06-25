@@ -1,6 +1,5 @@
-﻿<div class="container" *ngIf="cart != null">
-  <div class="row"><br /></div>
-  <md-card class="example-card">
+﻿<div class="container" *ngIf="cart != null && cart.cart.length">
+  <md-card>
     <div class="row">
       <div class="col-md-9">
         <div class="row">
@@ -16,7 +15,7 @@
         <hr />
 
         <div *ngFor="let product of cart.cart">
-          <div class="row rowMinHeight" >
+          <div class="row rowMinHeight">
             <div class="col-md-5">
               {{ product.name }}
             </div>
@@ -30,7 +29,7 @@
             </div>
             <div class="col-md-2">{{ product.totalPrice }}</div>
           </div>
-        
+
           <hr />
         </div>
 
@@ -57,11 +56,19 @@
           <p class="alignleft">Total</p>
           <p class="alignright">{{ cart.total }}</p>
         </div>
-        <button md-raised-button class="btn-block" color="primary">PROCEED TO CHECKOUT</button>
+        <button md-raised-button class="btn-block" color="primary" [routerLink]="['/checkout']">PROCEED TO CHECKOUT</button>
       </div>
     </div>
   </md-card>
-  <div class="row">
-    <br/>
-  </div>
+</div>
+<div class="container" *ngIf="cart == null || cart.cart.length < 1">
+  <md-card>
+    <div class="row">
+      Your cart is empty.
+    </div>
+    <div class="row">
+      <br />
+      <button md-raised-button color="default" [routerLink]="['/']">CONTINUE SHOPPING</button>
+    </div>
+  </md-card>
 </div>
