@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'app/services/sharedService';
 import { ProductService } from 'app/services/productService';
 import { Router } from '@angular/router';
@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.less'],
   providers: [SharedService, ProductService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   public cartCount: number = 0;
 
   public productIds: number[] = new Array();
@@ -19,10 +20,23 @@ export class AppComponent {
   constructor(private sharedService: SharedService, private productService: ProductService, private router: Router) {
     sharedService.onAddToCart.subscribe(
       (productId) => {
-        this.cartCount = this.cartCount + 1;
         this.productIds.push(productId);
+        this.cartCount = this.productIds.length;
       }
     );
+    sharedService.onRemoveFromCart.subscribe(
+      (productId) => {
+        var index = this.productIds.indexOf(productId);
+        if (index > -1) {
+          this.productIds.splice(index, 1);
+        }
+        this.cartCount = this.productIds.length;
+      }
+    );
+  }
+
+  ngOnInit(): void {
+    this.productIds = this.sharedService.retrieveProductIds();
   }
 
   goToCart() {

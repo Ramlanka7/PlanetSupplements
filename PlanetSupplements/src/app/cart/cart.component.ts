@@ -29,12 +29,14 @@ export class CartComponent implements OnInit {
 
   addItem(product: any) {
     product.quantity += 1;
+    this.sharedService.onAddToCart.emit(product.productId);
     this.updateCart(product);
   }
 
   removeItem(product: any) {
     if (product.quantity >= 1) {
       product.quantity = product.quantity - 1;
+      this.sharedService.onRemoveFromCart.emit(product.productId);
       this.updateCart(product);
     }
   }

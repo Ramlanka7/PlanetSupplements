@@ -4,6 +4,8 @@
 export class SharedService {
   onAddToCart: EventEmitter<number> = new EventEmitter();
 
+  onRemoveFromCart: EventEmitter<number> = new EventEmitter();
+
   cartCount: number;
 
   productIds: number[] = [];
