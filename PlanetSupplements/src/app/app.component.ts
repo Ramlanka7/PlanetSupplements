@@ -26,10 +26,7 @@ export class AppComponent implements OnInit {
     );
     sharedService.onRemoveFromCart.subscribe(
       (productId) => {
-        var index = this.productIds.indexOf(productId);
-        if (index > -1) {
-          this.productIds.splice(index, 1);
-        }
+        this.productIds.splice(this.productIds.indexOf(productId), 1);
         this.cartCount = this.productIds.length;
       }
     );
