@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductService {
- // private productUrl = "http://planetsupplementsapi.azurewebsites.net/api/Product/";
+  //private productUrl = "http://planetsupplementsapi.azurewebsites.net/api/Product/";
 
   private productUrl = "http://localhost:53286/api/Product/";
 

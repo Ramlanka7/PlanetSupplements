@@ -37,6 +37,7 @@ export class ProductComponent implements OnInit {
 
         if (this.categoryName === undefined) {
           this.router.navigate(['/page-not-found']);
+          this.isSpinner = false;
         } else {
 
           if (+params['id']) {
@@ -49,6 +50,7 @@ export class ProductComponent implements OnInit {
 
           if (!this.categoryId) {
             this.router.navigate(['/page-not-found']);
+            this.isSpinner = false;
           }
           this.location.go(this.categoryName);
         }
