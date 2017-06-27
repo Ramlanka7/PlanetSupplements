@@ -68,6 +68,12 @@ namespace PlanetSupplements.API.Controllers
             return cart;
         }
 
+        [HttpGet, Route("api/Product/GetAllProducts")]
+        public async Task<IEnumerable<Product>> GetAllProducts()
+        {
+            return await this.productService.GetAllProductsAsyc();
+        }
+
         public async Task<Product> GetProductById(int productId)
         {
             return await this.productService.GetProductByIdAsync(productId);

@@ -8,6 +8,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductService {
+ // private productUrl = "http://planetsupplementsapi.azurewebsites.net/api/Product/";
+
   private productUrl = "http://localhost:53286/api/Product/";
 
   constructor(private http: Http) { }
@@ -30,6 +32,11 @@ export class ProductService {
     }
 
     return this.http.get(this.productUrl + `GetProductsByIds/?` + queryString)
+      .map((res: Response) => res.json());
+  }
+
+  public getAllProducts(): Observable<Product[]> {
+    return this.http.get(this.productUrl + `GetAllProducts`)
       .map((res: Response) => res.json());
   }
 }

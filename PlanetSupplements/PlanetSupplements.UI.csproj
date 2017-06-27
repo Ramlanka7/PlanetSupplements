@@ -108,11 +108,10 @@
     <Content Include="src\app\register\register.component.less" />
     <Content Include="src\app\product\product.component.less" />
     <Content Include="src\app\cart\cart.component.less" />
-    <None Include="Properties\PublishProfiles\PlanetSupplement - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\PlanetSupplements - Web Deploy.pubxml" />
     <Content Include="src\app\page-not-found\page-not-found.component.less" />
     <Content Include="src\app\contact-us\contact-us.component.less" />
     <Content Include="src\app\checkout\checkout.component.less" />
+    <None Include="Properties\PublishProfiles\PlanetSupp - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

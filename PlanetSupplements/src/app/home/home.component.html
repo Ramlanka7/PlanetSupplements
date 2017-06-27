@@ -1,6 +1,24 @@
 ﻿<div class="container">
-  <h2>Welcome to Supplemental Fitness!</h2>
+  <md-progress-spinner style="margin:0 auto;" mode="indeterminate" *ngIf="isSpinner"></md-progress-spinner>
+  <div class="row">
+    <div *ngFor="let product of products">
+      <div class="col-md-3" style="margin-top: 5px">
+        <md-card class="example-card">
+          <img md-card-image src="../../assets/product/1.jpg">
+          <md-card-content>
+            <div class="text-center">
+              <p class="text-primary">
+                {{ product.name }}
+              </p>
 
-  <h3>Developed in Angular 4 and TypeScript</h3>
-
+              <h4>{{ product.price }}</h4>
+            </div>
+          </md-card-content>
+          <div class="text-center">
+            <button md-raised-button color="primary" (click)="addToCart(product.productId)">ADD TO CART</button>
+          </div>
+        </md-card>
+      </div>
+    </div>
+  </div>
 </div>
