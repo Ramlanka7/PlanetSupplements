@@ -1,5 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { Login } from 'app/Model/Login';
+import { HttpModule } from '@angular/http';
+import { UserService } from 'app/services/userService';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +9,10 @@ import { Login } from 'app/Model/Login';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent {
+
+  constructor(private http: HttpModule, private userService: UserService){
+
+  }
 
   private login = new Login();
 
@@ -21,7 +27,7 @@ export class LoginComponent {
   }
 
   loginUser() {
-    //todo: Implement login functionality
+    return this.http.
   }
 
   validateEmail(email: string) {

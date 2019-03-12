@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 export class ProductService {
   //private productUrl = "http://planetsupplementsapi.azurewebsites.net/api/Product/";
 
-  private productUrl = "http://localhost:53286/api/Product/";
+  private productUrl = "http://localhost:49526/api/Product/";
 
   constructor(private http: Http) { }
 
