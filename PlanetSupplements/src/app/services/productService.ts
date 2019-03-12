@@ -1,16 +1,17 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Product } from "app/Model/Product";
-import { CartViewModel } from "app/Model/CartViewModel";
+import { Product } from 'app/Model/Product';
+import { CartViewModel } from 'app/Model/CartViewModel';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductService {
+// tslint:disable-next-line: comment-format
   //private productUrl = "http://planetsupplementsapi.azurewebsites.net/api/Product/";
 
-  private productUrl = "http://localhost:49526/api/Product/";
+  private productUrl = 'http://localhost:49526/api/Product/';
 
   constructor(private http: Http) { }
 
@@ -21,13 +22,14 @@ export class ProductService {
 
   public getProductsByIds(productIds: number[]): Observable<CartViewModel> {
 
+// tslint:disable-next-line: comment-format
     //TODO: Not a good way to send query string like below. Need to Pass as Object
     let queryString = null;
-    for (var i = 0; i < productIds.length; i++) {
+    for (let i = 0; i < productIds.length; i++) {
       if (i === 0) {
-        queryString = "productIds=" + productIds[i];
+        queryString = 'productIds=' + productIds[i];
       } else {
-        queryString += "&productIds=" + productIds[i];
+        queryString += '&productIds=' + productIds[i];
       }
     }
 

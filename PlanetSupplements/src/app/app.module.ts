@@ -13,7 +13,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { PhonePipe } from 'app/pipes/phonepipe/phone.pipe';
-import { Angular2SocialLoginModule } from "angular2-social-login";
+import { Angular2SocialLoginModule } from 'angular2-social-login';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -40,13 +40,13 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 
-let providers = {
-  "google": {
-    "clientId": "55565887153-87jh8k8s5qq46hg9csmd18pvchmgcdvl.apps.googleusercontent.com"
+const providers = {
+  'google': {
+    'clientId': '55565887153-87jh8k8s5qq46hg9csmd18pvchmgcdvl.apps.googleusercontent.com'
   },
-  "facebook": {
-    "clientId": "1674757496165279",
-    "apiVersion": "v2.8"
+  'facebook': {
+    'clientId': '1674757496165279',
+    'apiVersion': 'v2.8'
   }
 };
 

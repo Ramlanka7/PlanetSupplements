@@ -14,6 +14,7 @@ export class LoginComponent {
 
   }
 
+// tslint:disable-next-line: member-ordering
   private login = new Login();
 
   invalid = false;
